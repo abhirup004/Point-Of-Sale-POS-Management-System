@@ -13,6 +13,7 @@ public class PosbeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PosbeApplication.class, args);
 		logger.info("PosbeApplication started successfully...");
+		logger.info("Camelia Chowdhury - 2024-06-01");
 	}
 
 }
