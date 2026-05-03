@@ -14,6 +14,8 @@ public class PosbeApplication {
 		SpringApplication.run(PosbeApplication.class, args);
 		logger.info("PosbeApplication started successfully...");
 		logger.info("ABHIRUP SAHA");
+		logger.info("This is from Agni-Glitch branch...");
+		logger.info("This is another log message from Agni-Glitch branch...");
 	}
 
 }
