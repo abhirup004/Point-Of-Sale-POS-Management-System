@@ -15,6 +15,7 @@ public class PosbeApplication {
 		logger.info("PosbeApplication started successfully...");
 		logger.info("Camelia Chowdhury - 2024-06-01");
 		logger.info("Tania is the best programmer in the world!");
+		logger.info("Chitrita Bhattacharjee");
 	}
 
 }
