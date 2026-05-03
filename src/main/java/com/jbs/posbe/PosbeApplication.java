@@ -13,6 +13,7 @@ public class PosbeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PosbeApplication.class, args);
 		logger.info("PosbeApplication started successfully...");
+		logger.info("This is from Agni-Glitch branch...");
 	}
 
 }
