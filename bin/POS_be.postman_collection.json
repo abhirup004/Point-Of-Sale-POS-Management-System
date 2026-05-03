@@ -1,0 +1,359 @@
+{
+  "info": {
+    "_postman_id": "7169babb-fc52-4b41-b932-616912915edb",
+    "name": "POS_be",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "3446538"
+  },
+  "item": [
+    {
+      "name": "Add Company",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\r\n//     \"cname\": \"Company 01\",\r\n//     \"cabbr\": \"C01\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 02\",\r\n//     \"cabbr\": \"C02\"\r\n// }\r\n{\r\n    \"cname\": \"Company 03\",\r\n    \"cabbr\": \"C03\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/companies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "companies"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add Company - success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// {\r\n//     \"cname\": \"Company 01\",\r\n//     \"cabbr\": \"C01\"\r\n// }\r\n{\r\n    \"cname\": \"Company 02\",\r\n    \"cabbr\": \"C02\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/companies",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 26 Apr 2026 10:22:14 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"companyId\": 2,\n    \"cname\": \"Company 02\",\n    \"cabbr\": \"C02\",\n    \"deleted\": false,\n    \"active\": true,\n    \"createdAt\": \"2026-04-26T15:52:14.794175\",\n    \"updatedAt\": \"2026-04-26T15:52:14.794175\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Companies by pagination",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/companies/page?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "companies",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Companies by pagination - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/companies/page?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 26 Apr 2026 10:25:13 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"content\": [\n        {\n            \"companyId\": 1,\n            \"cname\": \"Company 01\",\n            \"cabbr\": \"C01\",\n            \"deleted\": false,\n            \"active\": false,\n            \"createdAt\": \"2026-04-26T15:50:34.8951\",\n            \"updatedAt\": \"2026-04-26T15:50:34.8951\"\n        },\n        {\n            \"companyId\": 2,\n            \"cname\": \"Company 02\",\n            \"cabbr\": \"C02\",\n            \"deleted\": false,\n            \"active\": true,\n            \"createdAt\": \"2026-04-26T15:52:14.794175\",\n            \"updatedAt\": \"2026-04-26T15:52:14.794175\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalPages\": 1,\n    \"totalElements\": 2,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"numberOfElements\": 2,\n    \"first\": true,\n    \"empty\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update company by ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cname\": \"Company 01\",\r\n    \"cabbr\": \"C01\",\r\n    \"active\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/companies/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "companies",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get company by ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/companies/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "companies",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get company by ID - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/companies/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 26 Apr 2026 10:30:28 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"companyId\": 1,\n    \"cname\": \"Company 01\",\n    \"cabbr\": \"C01\",\n    \"deleted\": false,\n    \"active\": false,\n    \"createdAt\": \"2026-04-26T15:50:34.8951\",\n    \"updatedAt\": \"2026-04-26T15:50:34.8951\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete by ID",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/companies/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "companies",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete by ID - success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/companies/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "1"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 26 Apr 2026 10:34:39 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}
