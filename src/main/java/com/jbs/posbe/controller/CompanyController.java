@@ -66,9 +66,19 @@ public class CompanyController {
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Company updated successfully"),
 		@ApiResponse(responseCode = "404", description = "Company not found"),
 		@ApiResponse(responseCode = "400", description = "Invalid request body") })
-	@PutMapping("/{id}")
-	public ResponseEntity<Company> updateCompany(@PathVariable Long id, @RequestBody Company company) {
-		return ResponseEntity.ok(companyService.updateCompany(id, company));
+	@PutMapping("/{companyId}")
+	public ResponseEntity<Company> updateCompany(@PathVariable Long companyId, @RequestBody Company company) {
+//		return ResponseEntity.ok(companyService.updateCompany(id, company));
+		Company existingCompany =
+	            companyService.getCompanyById(companyId);
+
+	    existingCompany.setCname(company.getCname());
+	    existingCompany.setCabbr(company.getCabbr());
+	    existingCompany.setActive(company.isActive());
+
+	    return ResponseEntity.ok(
+	            companyService.saveCompany(existingCompany));
+	    
 	}
 	
 	// ---------------------------------------------------------------------
@@ -82,6 +92,7 @@ public class CompanyController {
 		                 description = "Company deleted successfully"),
 		    @ApiResponse(responseCode = "404",
 		                 description = "Company not found"),
+
 		    @ApiResponse(responseCode = "500",
 		                 description = "Error deleting company")
 		})
