@@ -24,3 +24,18 @@ Annotation	Purpose
 @Pattern	Regex validation
 
 ## Added environment properties
+
+## Modal Textbox functionality fixed.
+
+
+Company -> Product
+1		-> n
+| Method | Endpoint                          |
+| ------ | --------------------------------- |
+| POST   | /api/products                     |
+| GET    | /api/products                     |
+| GET    | /api/products/{id}                |
+| GET    | /api/products/company/{companyId} |
+| PATCH  | /api/products/{id}                |
+| DELETE | /api/products/{id}                |
+

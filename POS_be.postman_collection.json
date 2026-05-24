@@ -1026,6 +1026,859 @@
           "body": "{\n    \"status\": 404,\n    \"message\": \"Company not found with ID: 8\",\n    \"data\": null,\n    \"timestamp\": \"2026-05-15T22:16:15.0454193\"\n}"
         }
       ]
+    },
+    {
+      "name": "Add Product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\r\n//     \"company\": {\r\n//         \"companyId\": 9\r\n//     },\r\n//     \"pname\": \"Product 01\",\r\n//     \"hsn\": \"1234\",\r\n//     \"gst\": 18,\r\n//     \"unitPrice\": 850,\r\n//     \"stock\": 25\r\n// }\r\n// {\r\n//     \"company\": {\r\n//         \"companyId\": 11\r\n//     },\r\n//     \"pname\": \"Product 02\",\r\n//     \"hsn\": \"2345\",\r\n//     \"gst\": 5,\r\n//     \"unitPrice\": 250,\r\n//     \"stock\": 50\r\n// }\r\n// {\r\n//     \"company\": {\r\n//         \"companyId\": 12\r\n//     },\r\n//     \"pname\": \"Product 03\",\r\n//     \"hsn\": \"3456\",\r\n//     \"gst\": 12,\r\n//     \"unitPrice\": 500,\r\n//     \"stock\": 20\r\n// }\r\n// {\r\n//     \"company\": {\r\n//         \"companyId\": 9\r\n//     },\r\n//     \"pname\": \"Product 04\",\r\n//     \"hsn\": \"1234\",\r\n//     \"gst\": 18,\r\n//     \"unitPrice\": 1200,\r\n//     \"stock\": 8\r\n// }\r\n{\r\n  \"companyId\": 11,\r\n  \"pname\": \"Product 05\",\r\n  \"hsn\": \"6789\",\r\n  \"gst\": 12,\r\n  \"unitPrice\": 2000,\r\n  \"stock\": 5,\r\n  \"active\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add Product - success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// {\r\n//     \"company\": {\r\n//         \"companyId\": 9\r\n//     },\r\n//     \"pname\": \"Product 01\",\r\n//     \"hsn\": \"1234\",\r\n//     \"gst\": 18,\r\n//     \"unitPrice\": 850,\r\n//     \"stock\": 25\r\n// }\r\n// {\r\n//     \"company\": {\r\n//         \"companyId\": 11\r\n//     },\r\n//     \"pname\": \"Product 02\",\r\n//     \"hsn\": \"2345\",\r\n//     \"gst\": 5,\r\n//     \"unitPrice\": 250,\r\n//     \"stock\": 50\r\n// }\r\n// {\r\n//     \"company\": {\r\n//         \"companyId\": 12\r\n//     },\r\n//     \"pname\": \"Product 03\",\r\n//     \"hsn\": \"3456\",\r\n//     \"gst\": 12,\r\n//     \"unitPrice\": 500,\r\n//     \"stock\": 20\r\n// }\r\n{\r\n    \"company\": {\r\n        \"companyId\": 9\r\n    },\r\n    \"pname\": \"Product 04\",\r\n    \"hsn\": \"1234\",\r\n    \"gst\": 18,\r\n    \"unitPrice\": 1200,\r\n    \"stock\": 8\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 10:31:27 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 201,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"productId\": 4,\n        \"pname\": \"Product 04\",\n        \"hsn\": \"1234\",\n        \"gst\": 18,\n        \"unitPrice\": 1200,\n        \"stock\": 8,\n        \"deleted\": false,\n        \"active\": true,\n        \"createdAt\": \"2026-05-24T16:01:27.093745\",\n        \"updatedAt\": \"2026-05-24T16:01:27.093745\"\n    },\n    \"timestamp\": \"2026-05-24T16:01:27.1132017\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Products by pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/page?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Products by pagination - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/page?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 10:33:00 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Products retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"productId\": 1,\n                \"pname\": \"Product 01\",\n                \"hsn\": \"1234\",\n                \"gst\": 18,\n                \"unitPrice\": 850,\n                \"stock\": 25,\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-05-24T15:55:47.100843\",\n                \"updatedAt\": \"2026-05-24T15:55:47.100843\"\n            },\n            {\n                \"productId\": 2,\n                \"pname\": \"Product 02\",\n                \"hsn\": \"2345\",\n                \"gst\": 5,\n                \"unitPrice\": 250,\n                \"stock\": 50,\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-05-24T15:59:05.801752\",\n                \"updatedAt\": \"2026-05-24T15:59:05.801752\"\n            },\n            {\n                \"productId\": 3,\n                \"pname\": \"Product 03\",\n                \"hsn\": \"3456\",\n                \"gst\": 12,\n                \"unitPrice\": 500,\n                \"stock\": 20,\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-05-24T16:00:32.888808\",\n                \"updatedAt\": \"2026-05-24T16:00:32.889365\"\n            },\n            {\n                \"productId\": 4,\n                \"pname\": \"Product 04\",\n                \"hsn\": \"1234\",\n                \"gst\": 18,\n                \"unitPrice\": 1200,\n                \"stock\": 8,\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-05-24T16:01:27.093745\",\n                \"updatedAt\": \"2026-05-24T16:01:27.093745\"\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"unsorted\": true,\n                \"sorted\": false,\n                \"empty\": true\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalPages\": 1,\n        \"totalElements\": 4,\n        \"number\": 0,\n        \"sort\": {\n            \"unsorted\": true,\n            \"sorted\": false,\n            \"empty\": true\n        },\n        \"numberOfElements\": 4,\n        \"first\": true,\n        \"size\": 10,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-05-24T16:03:00.3443304\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get product by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get product by ID - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 10:35:14 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Product retrieved successfully\",\n    \"data\": {\n        \"productId\": 2,\n        \"pname\": \"Product 02\",\n        \"hsn\": \"2345\",\n        \"gst\": 5,\n        \"unitPrice\": 250,\n        \"stock\": 50,\n        \"deleted\": false,\n        \"active\": true,\n        \"createdAt\": \"2026-05-24T15:59:05.801752\",\n        \"updatedAt\": \"2026-05-24T15:59:05.801752\"\n    },\n    \"timestamp\": \"2026-05-24T16:05:14.5225084\"\n}"
+        },
+        {
+          "name": "Get product by ID - unsuccessful if id is deleted",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "2"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 11:20:24 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 500,\n    \"message\": \"Product not found\",\n    \"data\": null,\n    \"timestamp\": \"2026-05-24T16:50:24.978633\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Products by Company ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/company/11",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "company",
+            "11"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Products by Company ID - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/company/9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "company",
+                "9"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 10:38:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"productId\": 1,\n            \"pname\": \"Product 01\",\n            \"hsn\": \"1234\",\n            \"gst\": 18,\n            \"unitPrice\": 850,\n            \"stock\": 25,\n            \"deleted\": false,\n            \"active\": true,\n            \"createdAt\": \"2026-05-24T15:55:47.100843\",\n            \"updatedAt\": \"2026-05-24T15:55:47.100843\"\n        },\n        {\n            \"productId\": 4,\n            \"pname\": \"Product 04\",\n            \"hsn\": \"1234\",\n            \"gst\": 18,\n            \"unitPrice\": 1200,\n            \"stock\": 8,\n            \"deleted\": false,\n            \"active\": true,\n            \"createdAt\": \"2026-05-24T16:01:27.093745\",\n            \"updatedAt\": \"2026-05-24T16:01:27.093745\"\n        }\n    ],\n    \"timestamp\": \"2026-05-24T16:08:42.858471\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Product by ID",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"companyId\": 9\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Product by ID - success",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"pname\": \"Updated Product 02\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 10:55:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"productId\": 2,\n        \"pname\": \"Updated Product 02\",\n        \"hsn\": \"2345\",\n        \"gst\": 5,\n        \"unitPrice\": 300,\n        \"stock\": 50,\n        \"deleted\": false,\n        \"active\": true,\n        \"createdAt\": \"2026-05-24T15:59:05.801752\",\n        \"updatedAt\": \"2026-05-24T16:25:49.711468\"\n    },\n    \"timestamp\": \"2026-05-24T16:25:59.3568354\"\n}"
+        },
+        {
+          "name": "Update Product by ID - success",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"companyId\": 9\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 11:23:50 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"productId\": 5,\n        \"pname\": \"Product 05\",\n        \"hsn\": \"6789\",\n        \"gst\": 12,\n        \"unitPrice\": 2000,\n        \"stock\": 5,\n        \"deleted\": false,\n        \"active\": true,\n        \"createdAt\": \"2026-05-24T16:49:46.34441\",\n        \"updatedAt\": \"2026-05-24T16:49:46.34441\"\n    },\n    \"timestamp\": \"2026-05-24T16:53:50.9257982\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Product by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products",
+            "5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Product by ID - success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "2"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 10:57:18 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
     }
   ]
 }

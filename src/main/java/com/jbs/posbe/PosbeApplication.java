@@ -9,7 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PosbeApplication implements CommandLineRunner {
 	
-	private static final Logger logger = LoggerFactory.getLogger(PosbeApplication.class);
+	private static final Logger logger = 
+			LoggerFactory.getLogger(PosbeApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(PosbeApplication.class, args);
