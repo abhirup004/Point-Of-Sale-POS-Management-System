@@ -39,3 +39,9 @@ Company -> Product
 | PATCH  | /api/products/{id}                |
 | DELETE | /api/products/{id}                |
 
+SHOW CREATE TABLE products;
+
+INSERT INTO units(uname,uabbr,`active`,deleted,created_at,updated_at) VALUES('Piece','Pc',TRUE,FALSE,NOW(),NOW());
+INSERT INTO units(uname,uabbr,`active`,deleted,created_at,updated_at) VALUES('Gram','Gm',TRUE,FALSE,NOW(),NOW());
+
+UPDATE products SET unit_id = 1;

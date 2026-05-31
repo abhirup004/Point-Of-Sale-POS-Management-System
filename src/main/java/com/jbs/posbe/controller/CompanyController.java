@@ -38,7 +38,7 @@ public class CompanyController {
 	// ---------------------------------------------------------------------
 	@Operation(tags = "Companies", summary = "Create a new company", description = "Creates a new company.")
 	@ApiResponses(value = { @ApiResponse(responseCode = "201", description = "Company created successfully"),
-			@ApiResponse(responseCode = "500", description = "Error creating ticket") })
+			@ApiResponse(responseCode = "500", description = "Error creating company") })
 	@PostMapping
 	public ResponseEntity<ManagedApiResponse<Company>> saveCompany(
 			@Valid @RequestBody CompanyRequestDto dto) {
@@ -64,9 +64,9 @@ public class CompanyController {
     }
 	
 	// ---------------------------------------------------------------------
-	@Operation(tags = "Companies", summary = "List comments", description = "Retrieves all companies.")
+	@Operation(tags = "Companies", summary = "List companies", description = "Retrieves all companies.")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Companies retrieved successfully"),
-			@ApiResponse(responseCode = "500", description = "Error retrieving tickets") })
+			@ApiResponse(responseCode = "500", description = "Error retrieving units") })
 	@GetMapping("/page")
 	public ResponseEntity<ManagedApiResponse<Page<Company>>> getCompanies(
             @RequestParam(defaultValue = "0") int page,

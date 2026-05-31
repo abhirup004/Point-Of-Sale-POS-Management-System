@@ -23,6 +23,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "products")
 @Getter
@@ -41,11 +43,18 @@ public class Product {
     /*
      * Many Products -> One Company
      */
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id", nullable = false)
     @JsonBackReference
     private Company company;
+    
+    /*
+     * Many Products -> One Unit
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id", nullable = false)
+    @JsonBackReference
+    private Unit unit;
 
     @Column(nullable = false)
     private String pname;
@@ -73,5 +82,21 @@ public class Product {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+    
+    @JsonProperty("companyId")
+    public Long getCompanyId() {
+
+        return company != null
+                ? company.getCompanyId()
+                : null;
+    }
+    
+    @JsonProperty("unitId")
+    public Long getUnitId() {
+
+        return unit != null
+                ? unit.getUnitId()
+                : null;
+    }
 
 }

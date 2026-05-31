@@ -1,0 +1,135 @@
+Now talking about the Front end of the application using React JS-
+I have the following end API points to serve the backend for a ticketing application
+
+1. Create ticket:
+http://localhost:3001/api/tickets (POST)
+Input JSON:
+{
+    "subject": "Forth Subject",
+    "description": "Forth description of the ticket"
+}
+Output JSON:
+{
+    "message": "Ticket created successfully",
+    "data": {
+        "subject": "No subject input box",
+        "description": "Subject input box is not showing on chrome browser",
+        "_id": "6a1b0294794d5dd49c84331b",
+        "createdAt": "2026-05-30T15:30:28.437Z",
+        "updatedAt": "2026-05-30T15:30:28.437Z"
+    },
+    "status": 201
+}
+
+2. Get all tickets:
+http://localhost:3001/api/tickets (GET)
+Output JSON:
+{
+    "message": "Tickets fetched successfully",
+    "data": [
+        {
+            "_id": "69f61f3ef52ee617d4ebff20",
+            "subject": "The application is running very slow",
+            "description": "Third description of the ticket",
+            "__v": 0,
+            "updatedAt": "2026-05-30T15:21:31.606Z"
+        },
+        {
+            "_id": "6a0899d43186da09bfbf1a60",
+            "subject": "Forth Subject",
+            "description": "Forth description of the ticket",
+            "createdAt": "2026-05-16T16:22:44.617Z",
+            "updatedAt": "2026-05-16T16:22:44.617Z"
+        },
+        {
+            "_id": "6a1af376c3ca8b004db28875",
+            "subject": "Problem on Ticket create",
+            "description": "Frontend user unable to create new ticket.",
+            "createdAt": "2026-05-30T14:25:58.180Z",
+            "updatedAt": "2026-05-30T14:58:40.723Z"
+        },
+        {
+            "_id": "6a1afa518fb2855321f20228",
+            "subject": "Datestamp is incorrect JBS",
+            "description": "Datestamp associated with ticket is incorrect JBS.",
+            "createdAt": "2026-05-30T14:55:13.896Z",
+            "updatedAt": "2026-05-30T14:57:35.891Z"
+        },
+        {
+            "_id": "6a1b0294794d5dd49c84331b",
+            "subject": "No subject input box",
+            "description": "Subject input box is not showing on chrome browser",
+            "createdAt": "2026-05-30T15:30:28.437Z",
+            "updatedAt": "2026-05-30T15:30:28.437Z"
+        }
+    ],
+    "status": 200
+}
+
+3. Get a ticket by ID
+http://localhost:3001/api/tickets/69f61a46b5c27a04f362945f (GET)
+Output JSON:
+{
+    "message": "Ticket fetched successfully",
+    "data": {
+        "_id": "6a1afa518fb2855321f20228",
+        "subject": "Datestamp is incorrect JBS",
+        "description": "Datestamp associated with ticket is incorrect JBS.",
+        "createdAt": "2026-05-30T14:55:13.896Z",
+        "updatedAt": "2026-05-30T14:57:35.891Z"
+    },
+    "status": 200
+}
+
+4. Update partial ticket
+http://localhost:3001/api/tickets/69f61f3ef52ee617d4ebff20 (PATCH)
+Input JSON:
+{
+    "description": "Third description of the ticket"
+}
+Output JSON:
+{
+    "message": "Ticket partially updated successfully",
+    "data": {
+        "_id": "69f61f3ef52ee617d4ebff20",
+        "subject": "The application is running very slow",
+        "description": "Third description of the ticket",
+        "__v": 0,
+        "updatedAt": "2026-05-30T15:33:03.737Z"
+    },
+    "status": 200
+}
+
+5. Delete a particular ticket
+http://localhost:3001/api/tickets/69f61a46b5c27a04f362945f (DELETE)
+Input JSON:
+{
+    "description": "We are suffuring from slow application performance"
+}
+# Similarly it can alter the other fields.
+No Output JSON (204) without content
+
+I have the following existing ticket component:
+
+import React from 'react';
+
+const Ticket = () => {
+  return (
+    <div>Ticket</div>
+  );
+};
+
+export default Ticket; 
+
+You have to alter this component to accomodate the above mentioned end points for Create, Get, Pathch and Delete according to the following requirements
+
+1. Ticket (_id (auto), subject: text, description: text)
+2. Use tailwindcss
+3. Show the ticket data in tabular form.
+4. table should have two extra action columns Edit and Delete with icon interface.
+5. Must have a heading over the table and a right button to "Add Ticket" using a modal for ticket input. after save on the modal the parent table will be updated accordingly.
+6. On clicking the edit on a particular row, modal will open with existing data. after update the base table will be updated accordingly.
+7. Delete must ask for confirmation before final delete. and reflects on the parent table.
+8. table will show 10 records and add a scrillbar automatically to scroll more records.
+9. Use professional look and not any bigger size on display - use modarate size
+10. Do everything on the same component "Ticket.jsx"

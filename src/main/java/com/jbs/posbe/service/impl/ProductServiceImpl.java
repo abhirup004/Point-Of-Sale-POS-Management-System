@@ -10,8 +10,10 @@ import com.jbs.posbe.dto.request.ProductPatchDto;
 import com.jbs.posbe.dto.request.ProductRequestDto;
 import com.jbs.posbe.entity.Company;
 import com.jbs.posbe.entity.Product;
+import com.jbs.posbe.entity.Unit;
 import com.jbs.posbe.repository.CompanyRepository;
 import com.jbs.posbe.repository.ProductRepository;
+import com.jbs.posbe.repository.UnitRepository;
 import com.jbs.posbe.service.ProductService;
 
 import lombok.RequiredArgsConstructor;
@@ -23,16 +25,21 @@ public class ProductServiceImpl implements ProductService {
 	private final ProductRepository productRepository;
 
 	private final CompanyRepository companyRepository;
+	
+	private final UnitRepository unitRepository;
 
 	@Override
 	public Product saveProduct(ProductRequestDto dto) {
 
 		Company company = companyRepository.findById(dto.getCompanyId())
 				.orElseThrow(() -> new RuntimeException("Company not found"));
+		Unit unit = unitRepository.findById(dto.getUnitId())
+				.orElseThrow(() -> new RuntimeException("Unit not found"));
 
 		Product product = new Product();
 
 		product.setCompany(company);
+		product.setUnit(unit);
 		product.setPname(dto.getPname());
 		product.setHsn(dto.getHsn());
 		product.setGst(dto.getGst());
@@ -102,6 +109,14 @@ public class ProductServiceImpl implements ProductService {
 					.orElseThrow(() -> new RuntimeException("Company not found"));
 
 			existingProduct.setCompany(company);
+		}
+		
+		if (dto.getUnitId() != null) {
+
+			Unit unit = unitRepository.findById(dto.getUnitId())
+					.orElseThrow(() -> new RuntimeException("Unit not found"));
+			
+			existingProduct.setUnit(unit);
 		}
 
 		return productRepository.saveAndFlush(existingProduct);

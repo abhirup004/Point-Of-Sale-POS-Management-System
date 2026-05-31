@@ -8,23 +8,26 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProductRequestDto {
-	
+
 	@NotNull(message = "Company ID is required")
-    private Long companyId;
+	private Long companyId;
 
-    @NotBlank(message = "Product name is required")
-    private String pname;
+	@NotNull(message = "Unit ID is required")
+	private Long unitId;
 
-    private String hsn;
+	@NotBlank(message = "Product name is required")
+	private String pname;
 
-    @NotNull(message = "GST is required")
-    private Float gst;
+	private String hsn;
 
-    @NotNull(message = "Unit price is required")
-    private Float unitPrice;
+	@NotNull(message = "GST is required")
+	private Float gst;
 
-    @NotNull(message = "Stock is required")
-    private Integer stock;
+	@NotNull(message = "Unit price is required")
+	private Float unitPrice;
 
-    private Boolean active = true;
+	@NotNull(message = "Stock is required")
+	private Integer stock;
+
+	private Boolean active = true;
 }

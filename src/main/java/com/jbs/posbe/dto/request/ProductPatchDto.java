@@ -8,6 +8,8 @@ import lombok.Setter;
 public class ProductPatchDto {
 
     private Long companyId;
+    
+    private Long unitId;
 
     private String pname;
 
