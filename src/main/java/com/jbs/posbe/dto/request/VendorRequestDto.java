@@ -1,5 +1,7 @@
 package com.jbs.posbe.dto.request;
 
+import java.util.List;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -13,7 +15,7 @@ public class VendorRequestDto {
     private String vname;
     
     @NotNull
-    private Long companyId;
+    private List<Long> companyIds;
 
     private Boolean active = true;
 }

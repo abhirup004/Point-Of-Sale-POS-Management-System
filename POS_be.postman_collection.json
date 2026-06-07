@@ -16,7 +16,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "// {\r\n//     \"cname\": \"Company 01\",\r\n//     \"cabbr\": \"C01\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 02\",\r\n//     \"cabbr\": \"C02\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 03\",\r\n//     \"cabbr\": \"C03\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 05\",\r\n//     \"cabbr\": \"C05\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 08\",\r\n//     \"cabbr\": \"C08\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 09\",\r\n//     \"cabbr\": \"C09\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 10\",\r\n//     \"cabbr\": \"This is a long abbreviation\"\r\n// }\r\n// {\r\n//     \"cname\": \"\",\r\n//     \"cabbr\": \"C11\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 10\",\r\n//     \"cabbr\": \"C10\"\r\n// }\r\n{\r\n    \"cname\": \"Company 11\",\r\n    \"cabbr\": \"C11\"\r\n}",
+          "raw": "// {\r\n//     \"cname\": \"Company 01\",\r\n//     \"cabbr\": \"C01\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 02\",\r\n//     \"cabbr\": \"C02\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 03\",\r\n//     \"cabbr\": \"C03\"\r\n// }\r\n// {\r\n//     \"cname\": \"Company 04\",\r\n//     \"cabbr\": \"C04\"\r\n// }\r\n{\r\n    \"cname\": \"Company 05\",\r\n    \"cabbr\": \"C05\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -2449,7 +2449,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"vname\": \"Vendor 04\",\r\n    \"companyId\": 22,\r\n    \"active\": true\r\n}",
+          "raw": "{\r\n    \"vname\": \"Vendor 01\",\r\n    \"companyIds\": [2, 4],\r\n    \"active\": true\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -2477,7 +2477,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"vname\": \"Vendor 02\",\r\n    \"companyId\": 9,\r\n    \"active\": true\r\n}",
+              "raw": "{\r\n    \"vname\": \"Vendor 01\",\r\n    \"companyIds\": [2, 4],\r\n    \"active\": true\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2547,7 +2547,7 @@
             },
             {
               "key": "Date",
-              "value": "Sun, 07 Jun 2026 15:01:27 GMT"
+              "value": "Sun, 07 Jun 2026 16:32:10 GMT"
             },
             {
               "key": "Keep-Alive",
@@ -2559,7 +2559,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"status\": 201,\n    \"message\": \"Vendor created successfully\",\n    \"data\": {\n        \"vendorId\": 2,\n        \"vname\": \"Vendor 02\",\n        \"deleted\": false,\n        \"active\": true,\n        \"createdAt\": \"2026-06-07T20:31:27.522152\",\n        \"updatedAt\": \"2026-06-07T20:31:27.522152\",\n        \"companyId\": 9\n    },\n    \"timestamp\": \"2026-06-07T20:31:27.5364397\"\n}"
+          "body": "{\n    \"status\": 201,\n    \"message\": \"Vendor created successfully\",\n    \"data\": {\n        \"vendorId\": 3,\n        \"vname\": \"Vendor 03\",\n        \"companyIds\": [\n            4\n        ],\n        \"active\": true,\n        \"createdAt\": \"2026-06-07T22:02:10.357841\",\n        \"updatedAt\": \"2026-06-07T22:02:10.357841\"\n    },\n    \"timestamp\": \"2026-06-07T22:02:10.4094309\"\n}"
         }
       ]
     },
@@ -2672,7 +2672,7 @@
             },
             {
               "key": "Date",
-              "value": "Sun, 07 Jun 2026 15:03:30 GMT"
+              "value": "Sun, 07 Jun 2026 16:32:53 GMT"
             },
             {
               "key": "Keep-Alive",
@@ -2684,7 +2684,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendors retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"vendorId\": 1,\n                \"vname\": \"Vendor 01\",\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T20:30:55.947065\",\n                \"updatedAt\": \"2026-06-07T20:30:55.947065\",\n                \"companyId\": 2\n            },\n            {\n                \"vendorId\": 2,\n                \"vname\": \"Vendor 02\",\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T20:31:27.522152\",\n                \"updatedAt\": \"2026-06-07T20:31:27.522152\",\n                \"companyId\": 9\n            },\n            {\n                \"vendorId\": 3,\n                \"vname\": \"Vendor 03\",\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T20:31:55.463637\",\n                \"updatedAt\": \"2026-06-07T20:31:55.463637\",\n                \"companyId\": 12\n            },\n            {\n                \"vendorId\": 4,\n                \"vname\": \"Vendor 04\",\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T20:32:18.987347\",\n                \"updatedAt\": \"2026-06-07T20:32:18.987957\",\n                \"companyId\": 15\n            },\n            {\n                \"vendorId\": 5,\n                \"vname\": \"Vendor 05\",\n                \"deleted\": false,\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T20:32:43.758991\",\n                \"updatedAt\": \"2026-06-07T20:32:43.758991\",\n                \"companyId\": 22\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": true,\n                \"unsorted\": true,\n                \"sorted\": false\n            },\n            \"offset\": 0,\n            \"unpaged\": false,\n            \"paged\": true\n        },\n        \"last\": true,\n        \"totalElements\": 5,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": true,\n            \"unsorted\": true,\n            \"sorted\": false\n        },\n        \"first\": true,\n        \"numberOfElements\": 5,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-06-07T20:33:30.1277877\"\n}"
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendors retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"vendorId\": 1,\n                \"vname\": \"Vendor 01\",\n                \"companyIds\": [\n                    2,\n                    4\n                ],\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T22:01:06.668657\",\n                \"updatedAt\": \"2026-06-07T22:01:06.668657\"\n            },\n            {\n                \"vendorId\": 2,\n                \"vname\": \"Vendor 02\",\n                \"companyIds\": [\n                    3\n                ],\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T22:01:54.055593\",\n                \"updatedAt\": \"2026-06-07T22:01:54.055593\"\n            },\n            {\n                \"vendorId\": 3,\n                \"vname\": \"Vendor 03\",\n                \"companyIds\": [\n                    4\n                ],\n                \"active\": true,\n                \"createdAt\": \"2026-06-07T22:02:10.357841\",\n                \"updatedAt\": \"2026-06-07T22:02:10.357841\"\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": true,\n                \"sorted\": false,\n                \"unsorted\": true\n            },\n            \"offset\": 0,\n            \"unpaged\": false,\n            \"paged\": true\n        },\n        \"last\": true,\n        \"totalPages\": 1,\n        \"totalElements\": 3,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"numberOfElements\": 3,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-06-07T22:02:53.7888369\"\n}"
         }
       ]
     },
@@ -2694,7 +2694,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/vendors/3",
+          "raw": "http://localhost:8080/api/vendors/1",
           "protocol": "http",
           "host": [
             "localhost"
@@ -2703,7 +2703,7 @@
           "path": [
             "api",
             "vendors",
-            "3"
+            "1"
           ]
         }
       },
@@ -2714,7 +2714,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/vendors/3",
+              "raw": "http://localhost:8080/api/vendors/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -2723,7 +2723,7 @@
               "path": [
                 "api",
                 "vendors",
-                "3"
+                "1"
               ]
             }
           },
@@ -2777,7 +2777,7 @@
             },
             {
               "key": "Date",
-              "value": "Sun, 07 Jun 2026 15:04:02 GMT"
+              "value": "Sun, 07 Jun 2026 16:33:40 GMT"
             },
             {
               "key": "Keep-Alive",
@@ -2789,7 +2789,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendor retrieved successfully\",\n    \"data\": {\n        \"vendorId\": 3,\n        \"vname\": \"Vendor 03\",\n        \"deleted\": false,\n        \"active\": true,\n        \"createdAt\": \"2026-06-07T20:31:55.463637\",\n        \"updatedAt\": \"2026-06-07T20:31:55.463637\",\n        \"companyId\": 12\n    },\n    \"timestamp\": \"2026-06-07T20:34:02.0476225\"\n}"
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendor retrieved successfully\",\n    \"data\": {\n        \"vendorId\": 1,\n        \"vname\": \"Vendor 01\",\n        \"companyIds\": [\n            2,\n            4\n        ],\n        \"active\": true,\n        \"createdAt\": \"2026-06-07T22:01:06.668657\",\n        \"updatedAt\": \"2026-06-07T22:01:06.668657\"\n    },\n    \"timestamp\": \"2026-06-07T22:03:40.7228693\"\n}"
         }
       ]
     },
@@ -2808,7 +2808,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8080/api/vendors/3",
+          "raw": "http://localhost:8080/api/vendors/1",
           "protocol": "http",
           "host": [
             "localhost"
@@ -2817,7 +2817,7 @@
           "path": [
             "api",
             "vendors",
-            "3"
+            "1"
           ]
         }
       },
@@ -2837,7 +2837,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8080/api/vendors/3",
+              "raw": "http://localhost:8080/api/vendors/1",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -2846,7 +2846,7 @@
               "path": [
                 "api",
                 "vendors",
-                "3"
+                "1"
               ]
             }
           },
@@ -2900,7 +2900,7 @@
             },
             {
               "key": "Date",
-              "value": "Sun, 07 Jun 2026 15:04:50 GMT"
+              "value": "Sun, 07 Jun 2026 16:34:43 GMT"
             },
             {
               "key": "Keep-Alive",
@@ -2912,7 +2912,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendor updated successfully\",\n    \"data\": {\n        \"vendorId\": 3,\n        \"vname\": \"Vendor 03\",\n        \"deleted\": false,\n        \"active\": false,\n        \"createdAt\": \"2026-06-07T20:31:55.463637\",\n        \"updatedAt\": \"2026-06-07T20:34:50.813769\",\n        \"companyId\": 12\n    },\n    \"timestamp\": \"2026-06-07T20:34:50.8511534\"\n}"
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendor updated successfully\",\n    \"data\": {\n        \"vendorId\": 1,\n        \"vname\": \"Vendor 01\",\n        \"companyIds\": [\n            2,\n            4\n        ],\n        \"active\": false,\n        \"createdAt\": \"2026-06-07T22:01:06.668657\",\n        \"updatedAt\": \"2026-06-07T22:04:43.731613\"\n    },\n    \"timestamp\": \"2026-06-07T22:04:43.7778857\"\n}"
         }
       ]
     },
@@ -3001,7 +3001,7 @@
             },
             {
               "key": "Date",
-              "value": "Sun, 07 Jun 2026 15:05:25 GMT"
+              "value": "Sun, 07 Jun 2026 16:35:28 GMT"
             },
             {
               "key": "Keep-Alive",

@@ -1,5 +1,7 @@
 package com.jbs.posbe.dto.request;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +11,7 @@ public class VendorPatchDto {
 
     private String vname;
     
-    private Long companyId;
+    private List<Long> companyIds;
 
     private Boolean active;
 }
