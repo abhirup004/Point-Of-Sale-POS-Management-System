@@ -1,135 +1,456 @@
-Now talking about the Front end of the application using React JS-
-I have the following end API points to serve the backend for a ticketing application
+Now talking about the Front end of the application using React JS for my POS (Point Of Sale) application.
+I have the following API end points to serve the backend for a Product
 
-1. Create ticket:
-http://localhost:3001/api/tickets (POST)
+1. Create unit:
+http://localhost:8080/api/products (POST)
 Input JSON:
 {
-    "subject": "Forth Subject",
-    "description": "Forth description of the ticket"
+  "companyId": 2,
+  "unitId": 1,
+  "pname": "Basmati Rice",
+  "hsn": "100630",
+  "gst": 5,
+  "unitPrice": 120.50,
+  "stock": 50,
+  "active": true
 }
 Output JSON:
 {
-    "message": "Ticket created successfully",
+    "status": 201,
+    "message": "Product created successfully",
     "data": {
-        "subject": "No subject input box",
-        "description": "Subject input box is not showing on chrome browser",
-        "_id": "6a1b0294794d5dd49c84331b",
-        "createdAt": "2026-05-30T15:30:28.437Z",
-        "updatedAt": "2026-05-30T15:30:28.437Z"
+        "productId": 7,
+        "pname": "Basmati Rice",
+        "hsn": "100630",
+        "gst": 5,
+        "unitPrice": 120.5,
+        "stock": 50,
+        "deleted": false,
+        "active": true,
+        "createdAt": "2026-05-31T15:04:24.880296",
+        "updatedAt": "2026-05-31T15:04:24.881442"
     },
-    "status": 201
+    "timestamp": "2026-05-31T15:04:24.9354281"
 }
 
-2. Get all tickets:
-http://localhost:3001/api/tickets (GET)
+2. Get all products by pagination:
+http://localhost:8080/api/products/page?page=0&size=10 (GET)
 Output JSON:
 {
-    "message": "Tickets fetched successfully",
-    "data": [
-        {
-            "_id": "69f61f3ef52ee617d4ebff20",
-            "subject": "The application is running very slow",
-            "description": "Third description of the ticket",
-            "__v": 0,
-            "updatedAt": "2026-05-30T15:21:31.606Z"
-        },
-        {
-            "_id": "6a0899d43186da09bfbf1a60",
-            "subject": "Forth Subject",
-            "description": "Forth description of the ticket",
-            "createdAt": "2026-05-16T16:22:44.617Z",
-            "updatedAt": "2026-05-16T16:22:44.617Z"
-        },
-        {
-            "_id": "6a1af376c3ca8b004db28875",
-            "subject": "Problem on Ticket create",
-            "description": "Frontend user unable to create new ticket.",
-            "createdAt": "2026-05-30T14:25:58.180Z",
-            "updatedAt": "2026-05-30T14:58:40.723Z"
-        },
-        {
-            "_id": "6a1afa518fb2855321f20228",
-            "subject": "Datestamp is incorrect JBS",
-            "description": "Datestamp associated with ticket is incorrect JBS.",
-            "createdAt": "2026-05-30T14:55:13.896Z",
-            "updatedAt": "2026-05-30T14:57:35.891Z"
-        },
-        {
-            "_id": "6a1b0294794d5dd49c84331b",
-            "subject": "No subject input box",
-            "description": "Subject input box is not showing on chrome browser",
-            "createdAt": "2026-05-30T15:30:28.437Z",
-            "updatedAt": "2026-05-30T15:30:28.437Z"
-        }
-    ],
-    "status": 200
-}
-
-3. Get a ticket by ID
-http://localhost:3001/api/tickets/69f61a46b5c27a04f362945f (GET)
-Output JSON:
-{
-    "message": "Ticket fetched successfully",
+    "status": 200,
+    "message": "Products retrieved successfully",
     "data": {
-        "_id": "6a1afa518fb2855321f20228",
-        "subject": "Datestamp is incorrect JBS",
-        "description": "Datestamp associated with ticket is incorrect JBS.",
-        "createdAt": "2026-05-30T14:55:13.896Z",
-        "updatedAt": "2026-05-30T14:57:35.891Z"
+        "content": [
+            {
+                "productId": 1,
+                "pname": "Product 01",
+                "hsn": "1234",
+                "gst": 18,
+                "unitPrice": 850,
+                "stock": 25,
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-24T15:55:47.100843",
+                "updatedAt": "2026-05-24T15:55:47.100843",
+                "unitId": 1,
+                "companyId": 9
+            },
+            {
+                "productId": 3,
+                "pname": "Product 03",
+                "hsn": "3456",
+                "gst": 12,
+                "unitPrice": 500,
+                "stock": 20,
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-24T16:00:32.888808",
+                "updatedAt": "2026-05-24T16:00:32.889365",
+                "unitId": 1,
+                "companyId": 12
+            },
+            {
+                "productId": 4,
+                "pname": "Product 04",
+                "hsn": "1234",
+                "gst": 18,
+                "unitPrice": 1200,
+                "stock": 8,
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-24T16:01:27.093745",
+                "updatedAt": "2026-05-24T16:01:27.093745",
+                "unitId": 1,
+                "companyId": 9
+            },
+            {
+                "productId": 7,
+                "pname": "Basmati Rice",
+                "hsn": "100630",
+                "gst": 5,
+                "unitPrice": 120.5,
+                "stock": 50,
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-31T15:04:24.880296",
+                "updatedAt": "2026-05-31T15:04:24.881442",
+                "unitId": 1,
+                "companyId": 2
+            }
+        ],
+        "pageable": {
+            "pageNumber": 0,
+            "pageSize": 10,
+            "sort": {
+                "empty": true,
+                "unsorted": true,
+                "sorted": false
+            },
+            "offset": 0,
+            "unpaged": false,
+            "paged": true
+        },
+        "last": true,
+        "totalElements": 4,
+        "totalPages": 1,
+        "size": 10,
+        "number": 0,
+        "sort": {
+            "empty": true,
+            "unsorted": true,
+            "sorted": false
+        },
+        "first": true,
+        "numberOfElements": 4,
+        "empty": false
     },
-    "status": 200
+    "timestamp": "2026-05-31T15:14:11.5182027"
 }
 
-4. Update partial ticket
-http://localhost:3001/api/tickets/69f61f3ef52ee617d4ebff20 (PATCH)
+3. Get a product by ID
+http://localhost:8080/api/products/3 (GET)
+Output JSON:
+{
+    "status": 200,
+    "message": "Product retrieved successfully",
+    "data": {
+        "productId": 3,
+        "pname": "Product 03",
+        "hsn": "3456",
+        "gst": 12,
+        "unitPrice": 500,
+        "stock": 20,
+        "deleted": false,
+        "active": true,
+        "createdAt": "2026-05-24T16:00:32.888808",
+        "updatedAt": "2026-05-24T16:00:32.889365",
+        "unitId": 1,
+        "companyId": 12
+    },
+    "timestamp": "2026-05-31T15:20:35.1790534"
+}}
+
+4. Update partially product
+http://localhost:8080/api/products/7 (PATCH)
 Input JSON:
 {
-    "description": "Third description of the ticket"
+    "pname": "IndiaGate Basmati Rice"
 }
 Output JSON:
 {
-    "message": "Ticket partially updated successfully",
+    "status": 200,
+    "message": "Product updated successfully",
     "data": {
-        "_id": "69f61f3ef52ee617d4ebff20",
-        "subject": "The application is running very slow",
-        "description": "Third description of the ticket",
-        "__v": 0,
-        "updatedAt": "2026-05-30T15:33:03.737Z"
+        "productId": 7,
+        "pname": "IndiaGate Basmati Rice",
+        "hsn": "100630",
+        "gst": 5,
+        "unitPrice": 120.5,
+        "stock": 50,
+        "deleted": false,
+        "active": true,
+        "createdAt": "2026-05-31T15:04:24.880296",
+        "updatedAt": "2026-05-31T15:24:57.713183",
+        "unitId": 1,
+        "companyId": 2
     },
-    "status": 200
+    "timestamp": "2026-05-31T15:24:57.7330813"
 }
 
-5. Delete a particular ticket
-http://localhost:3001/api/tickets/69f61a46b5c27a04f362945f (DELETE)
-Input JSON:
-{
-    "description": "We are suffuring from slow application performance"
-}
-# Similarly it can alter the other fields.
-No Output JSON (204) without content
+5. Delete a particular product
+http://localhost:8080/api/products/2 (DELETE)
+Output JSON:
+No Output JSON (204) No Content
 
-I have the following existing ticket component:
+I have the following existing unit component:
 
 import React from 'react';
 
-const Ticket = () => {
-  return (
-    <div>Ticket</div>
-  );
+const Product = () => {
+    return (
+        <div>
+            <h1 className='text-3xl font-bold text-red-700'>
+                Product Page
+            </h1>
+        </div>
+    );
 };
 
-export default Ticket; 
+export default Product;
 
 You have to alter this component to accomodate the above mentioned end points for Create, Get, Pathch and Delete according to the following requirements
 
-1. Ticket (_id (auto), subject: text, description: text)
+1. My Spting boot product entity:
+package com.jbs.posbe.entity;
+
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Entity
+@Table(name = "products")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@SQLDelete(sql = "UPDATE products SET deleted = true WHERE product_id = ?")
+@SQLRestriction("deleted = false")
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
+    private Long productId;
+
+    /*
+     * Many Products -> One Company
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id", nullable = false)
+    @JsonBackReference
+    private Company company;
+    
+    /*
+     * Many Products -> One Unit
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id", nullable = false)
+    @JsonBackReference
+    private Unit unit;
+
+    @Column(nullable = false)
+    private String pname;
+
+    private String hsn;
+
+    @Column(nullable = false)
+    private float gst;
+
+    @Column(nullable = false)
+    private float unitPrice;
+
+    @Column(nullable = false)
+    private int stock;
+
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private boolean deleted;
+
+    @Column(nullable = false)
+    private boolean active = true;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+    
+    @JsonProperty("companyId")
+    public Long getCompanyId() {
+
+        return company != null
+                ? company.getCompanyId()
+                : null;
+    }
+    
+    @JsonProperty("unitId")
+    public Long getUnitId() {
+
+        return unit != null
+                ? unit.getUnitId()
+                : null;
+    }
+
+}
+
 2. Use tailwindcss
-3. Show the ticket data in tabular form.
+3. Show the unit data in tabular form.
 4. table should have two extra action columns Edit and Delete with icon interface.
-5. Must have a heading over the table and a right button to "Add Ticket" using a modal for ticket input. after save on the modal the parent table will be updated accordingly.
-6. On clicking the edit on a particular row, modal will open with existing data. after update the base table will be updated accordingly.
+5. Must have a heading over the table and a right button to "Add Product" using a modal for unit input. after save on the modal the parent table will be updated accordingly. Use dropdown for Company and Unit fields with existing values using there getter methids.
+6. On clicking the edit on a particular row, modal will open with existing data. after update the base table will be updated accordingly. Company or Unit are also editable.
 7. Delete must ask for confirmation before final delete. and reflects on the parent table.
 8. table will show 10 records and add a scrillbar automatically to scroll more records.
 9. Use professional look and not any bigger size on display - use modarate size
-10. Do everything on the same component "Ticket.jsx"
+10. Do everything on the same component "Product.jsx"
+11. Design style and size must follow Company.jsx (previously attached) - Professionally design must be consistent.
+
+
+GET http://localhost:8080/api/companies/page?page=0&size=10
+
+Output JSON:
+{
+    "status": 200,
+    "message": "Companies retrieved successfully",
+    "data": {
+        "content": [
+            {
+                "companyId": 2,
+                "cname": "Company 02",
+                "cabbr": "C02",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-04-26T15:52:14.794175",
+                "updatedAt": "2026-04-26T15:52:14.794175"
+            },
+            {
+                "companyId": 3,
+                "cname": "Company 01",
+                "cabbr": "C01",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-04-26T15:58:43.095779",
+                "updatedAt": "2026-04-26T15:58:43.096334"
+            },
+            {
+                "companyId": 8,
+                "cname": "Company 08",
+                "cabbr": "C08",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-15T20:00:51.537982",
+                "updatedAt": "2026-05-15T20:00:51.537982"
+            }
+        ],
+        "pageable": {
+            "pageNumber": 0,
+            "pageSize": 10,
+            "sort": {
+                "empty": true,
+                "sorted": false,
+                "unsorted": true
+            },
+            "offset": 0,
+            "paged": true,
+            "unpaged": false
+        },
+        "last": true,
+        "totalElements": 3,
+        "totalPages": 1,
+        "size": 10,
+        "number": 0,
+        "first": true,
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "numberOfElements": 3,
+        "empty": false
+    },
+    "timestamp": "2026-05-15T20:01:56.7004448"
+}
+
+GET http://localhost:8080/api/units/page?page=0&size=10
+
+Output JSON:
+{
+    "status": 200,
+    "message": "Units retrieved successfully",
+    "data": {
+        "content": [
+            {
+                "unitId": 1,
+                "uname": "Piece",
+                "uabbr": "Pc",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-29T16:53:54",
+                "updatedAt": "2026-05-29T16:54:02"
+            },
+            {
+                "unitId": 2,
+                "uname": "Gram",
+                "uabbr": "Gm",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-29T16:55:32",
+                "updatedAt": "2026-05-29T16:55:32"
+            },
+            {
+                "unitId": 3,
+                "uname": "Kilogram",
+                "uabbr": "Kg",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-29T22:29:20.904141",
+                "updatedAt": "2026-05-29T22:29:20.904141"
+            },
+            {
+                "unitId": 4,
+                "uname": "2 Combo",
+                "uabbr": "2Cb",
+                "deleted": false,
+                "active": true,
+                "createdAt": "2026-05-29T22:50:59.201854",
+                "updatedAt": "2026-05-29T22:50:59.201854"
+            }
+        ],
+        "pageable": {
+            "pageNumber": 0,
+            "pageSize": 10,
+            "sort": {
+                "empty": true,
+                "unsorted": true,
+                "sorted": false
+            },
+            "offset": 0,
+            "unpaged": false,
+            "paged": true
+        },
+        "last": true,
+        "totalElements": 4,
+        "totalPages": 1,
+        "size": 10,
+        "number": 0,
+        "sort": {
+            "empty": true,
+            "unsorted": true,
+            "sorted": false
+        },
+        "first": true,
+        "numberOfElements": 4,
+        "empty": false
+    },
+    "timestamp": "2026-05-31T12:45:49.4862025"
+}
