@@ -30,12 +30,30 @@ public class VendorController {
     @Operation(
             tags = "Vendors",
             summary = "Create a new vendor",
-            description = "Creates a new vendor."
+            description = """
+                    Creates a new vendor and associates it with a company.
+
+                    Sample Request:
+
+                    {
+                        "companyId": 1,
+                        "vname": "ABC Suppliers",
+                        "active": true
+                    }
+                    """
     )
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "201",
                     description = "Vendor created successfully"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Company not found"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Invalid request body"
             ),
             @ApiResponse(
                     responseCode = "500",
@@ -45,18 +63,9 @@ public class VendorController {
     @PostMapping
     public ResponseEntity<ManagedApiResponse<Vendor>> saveVendor(@Valid @RequestBody VendorRequestDto dto) {
 
-        Vendor vendor = new Vendor();
+        Vendor savedVendor = vendorService.saveVendor(dto);
 
-        vendor.setVname(dto.getVname());
-
-        if (dto.getActive() != null) {
-            vendor.setActive(dto.getActive());
-        }
-
-        Vendor savedVendor = vendorService.saveVendor(vendor);
-
-        ManagedApiResponse<Vendor> response =
-                new ManagedApiResponse<>(
+        ManagedApiResponse<Vendor> response = new ManagedApiResponse<>(
                         HttpStatus.CREATED.value(),
                         "Vendor created successfully",
                         savedVendor
@@ -134,11 +143,41 @@ public class VendorController {
         return ResponseEntity.ok(response);
     }
 
-    // ---------------------------------------------------------------------
+ // ---------------------------------------------------------------------
     @Operation(
             tags = "Vendors",
             summary = "Update vendor data",
-            description = "Updates vendor details."
+            description = """
+                    Updates vendor details partially.
+
+                    Examples:
+
+                    Change Vendor Name:
+
+                    {
+                        "vname": "XYZ Suppliers"
+                    }
+
+                    Change Company:
+
+                    {
+                        "companyId": 3
+                    }
+
+                    Disable Vendor:
+
+                    {
+                        "active": false
+                    }
+
+                    Multiple Updates:
+
+                    {
+                        "companyId": 2,
+                        "vname": "ABC Traders",
+                        "active": true
+                    }
+                    """
     )
     @ApiResponses(value = {
             @ApiResponse(
@@ -148,6 +187,10 @@ public class VendorController {
             @ApiResponse(
                     responseCode = "404",
                     description = "Vendor not found"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Company not found"
             ),
             @ApiResponse(
                     responseCode = "400",
@@ -161,8 +204,7 @@ public class VendorController {
 
         Vendor updatedVendor = vendorService.updateVendor(vendorId, dto);
 
-        ManagedApiResponse<Vendor> response =
-                new ManagedApiResponse<>(
+        ManagedApiResponse<Vendor> response = new ManagedApiResponse<>(
                         HttpStatus.OK.value(),
                         "Vendor updated successfully",
                         updatedVendor

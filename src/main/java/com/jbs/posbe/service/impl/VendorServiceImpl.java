@@ -5,7 +5,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.jbs.posbe.dto.request.VendorPatchDto;
+import com.jbs.posbe.dto.request.VendorRequestDto;
+import com.jbs.posbe.entity.Company;
 import com.jbs.posbe.entity.Vendor;
+import com.jbs.posbe.repository.CompanyRepository;
 import com.jbs.posbe.repository.VendorRepository;
 import com.jbs.posbe.service.VendorService;
 
@@ -16,13 +19,25 @@ import lombok.RequiredArgsConstructor;
 public class VendorServiceImpl implements VendorService {
 
     private final VendorRepository vendorRepository;
+    
+    private final CompanyRepository companyRepository;
 
     @Override
-    public Vendor saveVendor(Vendor vendor) {
-        if (vendor == null) {
-            throw new IllegalArgumentException(
-                    "Vendor cannot be null");
+    public Vendor saveVendor(VendorRequestDto dto) {
+
+        Company company = companyRepository.findById(dto.getCompanyId())
+                .orElseThrow(() -> new RuntimeException("Company not found"));
+
+        Vendor vendor = new Vendor();
+
+        vendor.setCompany(company);
+
+        vendor.setVname(dto.getVname());
+
+        if (dto.getActive() != null) {
+            vendor.setActive(dto.getActive());
         }
+
         return vendorRepository.save(vendor);
     }
 
@@ -42,16 +57,26 @@ public class VendorServiceImpl implements VendorService {
 
     @Override
     public Vendor updateVendor(Long vendorId, VendorPatchDto dto) {
+
         Vendor vendor = getVendorById(vendorId);
+
+        if (dto.getCompanyId() != null) {
+
+            Company company = companyRepository.findById(dto.getCompanyId())
+                    .orElseThrow(() -> new RuntimeException("Company not found"));
+            vendor.setCompany(company);
+        }
 
         if (dto.getVname() != null) {
             vendor.setVname(dto.getVname());
         }
+
         if (dto.getActive() != null) {
             vendor.setActive(dto.getActive());
         }
 
-        return vendorRepository.saveAndFlush(vendor);
+        return vendorRepository
+                .saveAndFlush(vendor);
     }
 
     @Override

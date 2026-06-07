@@ -7,6 +7,9 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +30,14 @@ public class Vendor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vendor_id")
     private Long vendorId;
+    
+    /*
+     * Many Vendors -> One Company
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id", nullable = false)
+    @JsonBackReference
+    private Company company;
 
     @Column(nullable = false)
     private String vname;
@@ -43,4 +54,9 @@ public class Vendor {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+    
+    @JsonProperty("companyId")
+    public Long getCompanyId() {
+        return company != null ? company.getCompanyId() : null;
+    }
 }

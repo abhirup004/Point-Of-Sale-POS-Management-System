@@ -8,6 +8,8 @@ import lombok.Setter;
 public class VendorPatchDto {
 
     private String vname;
+    
+    private Long companyId;
 
     private Boolean active;
 }

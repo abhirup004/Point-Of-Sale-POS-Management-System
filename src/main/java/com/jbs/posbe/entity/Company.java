@@ -69,5 +69,13 @@ public class Company {
     )
     @JsonIgnore
     private List<Product> products;
+    
+    @OneToMany(
+            mappedBy = "company",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JsonIgnore
+    private List<Vendor> vendors;
 
 }
