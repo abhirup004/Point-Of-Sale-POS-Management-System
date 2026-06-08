@@ -27,17 +27,7 @@ public class VendorController {
 	private final VendorService vendorService;
 
 	// ---------------------------------------------------------------------
-	@Operation(tags = "Vendors", summary = "Create a new vendor", description = """
-			                    Creates a new vendor and associates it with a company.
-
-			                    Sample Request:
-
-			                    {
-			  "companyIds": [1, 2, 5],
-			  "vname": "ABC Suppliers",
-			  "active": true
-			}
-			                    """)
+	@Operation(tags = "Vendors", summary = "Create a new vendor", description = "Creates a new vendor.")
 	@ApiResponses(value = { @ApiResponse(responseCode = "201", description = "Vendor created successfully"),
 			@ApiResponse(responseCode = "404", description = "Company not found"),
 			@ApiResponse(responseCode = "400", description = "Invalid request body"),
@@ -87,37 +77,7 @@ public class VendorController {
 	}
 
 	// ---------------------------------------------------------------------
-	@Operation(tags = "Vendors", summary = "Update vendor data", description = """
-			                    Updates vendor details partially.
-
-			                    Examples:
-
-			                    Change Vendor Name:
-
-			                    {
-			                        "vname": "XYZ Suppliers"
-			                    }
-
-			                    Change Company:
-
-			                    {
-			                        "companyId": [1, 2, 5]
-			                    }
-
-			                    Disable Vendor:
-
-			                    {
-			                        "active": false
-			                    }
-
-			                    Multiple Updates:
-
-			                    {
-			  "companyIds": [1, 2, 5],
-			  "vname": "ABC Suppliers",
-			  "active": true
-			}
-			                    """)
+	@Operation(tags = "Vendors", summary = "Update vendor data", description = "Updates vendor details.")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Vendor updated successfully"),
 			@ApiResponse(responseCode = "404", description = "Vendor not found"),
 			@ApiResponse(responseCode = "404", description = "Company not found"),
