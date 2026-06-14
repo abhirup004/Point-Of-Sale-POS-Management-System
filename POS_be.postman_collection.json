@@ -3591,6 +3591,712 @@
           "body": null
         }
       ]
+    },
+    {
+      "name": "Create Purchase",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"vendorId\": 2,\r\n    \"companyId\": 3,\r\n    \"invoiceNo\": \"PUR-2026-0001\",\r\n    \"invoiceDate\": \"2026-06-14\",\r\n    \"netItemCount\": 2,\r\n    \"netGross\": 2500.00,\r\n    \"netDiscount\": 100.00,\r\n    \"taxableAmount\": 2400.00,\r\n    \"netGstAmount\": 432.00,\r\n    \"netPayableAmount\": 2832.00,\r\n    \"finalAmount\": 2832.00,\r\n    \"items\": [\r\n        {\r\n            \"productId\": 1,\r\n            \"mrp\": 100.00,\r\n            \"totalQty\": 10,\r\n            \"grossAmount\": 1000.00,\r\n            \"discountPer\": 5.00,\r\n            \"discountAmount\": 50.00,\r\n            \"taxableAmount\": 950.00,\r\n            \"gstAmount\": 171.00,\r\n            \"payableAmount\": 1121.00\r\n        },\r\n        {\r\n            \"productId\": 2,\r\n            \"mrp\": 150.00,\r\n            \"totalQty\": 10,\r\n            \"grossAmount\": 1500.00,\r\n            \"discountPer\": 3.33,\r\n            \"discountAmount\": 50.00,\r\n            \"taxableAmount\": 1450.00,\r\n            \"gstAmount\": 261.00,\r\n            \"payableAmount\": 1711.00\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/purchases",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "purchases"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Purchase - success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"vendorId\": 2,\r\n    \"companyId\": 3,\r\n    \"invoiceNo\": \"PUR-2026-0001\",\r\n    \"invoiceDate\": \"2026-06-14\",\r\n    \"netItemCount\": 2,\r\n    \"netGross\": 2500.00,\r\n    \"netDiscount\": 100.00,\r\n    \"taxableAmount\": 2400.00,\r\n    \"netGstAmount\": 432.00,\r\n    \"netPayableAmount\": 2832.00,\r\n    \"finalAmount\": 2832.00,\r\n    \"items\": [\r\n        {\r\n            \"productId\": 1,\r\n            \"mrp\": 100.00,\r\n            \"totalQty\": 10,\r\n            \"grossAmount\": 1000.00,\r\n            \"discountPer\": 5.00,\r\n            \"discountAmount\": 50.00,\r\n            \"taxableAmount\": 950.00,\r\n            \"gstAmount\": 171.00,\r\n            \"payableAmount\": 1121.00\r\n        },\r\n        {\r\n            \"productId\": 2,\r\n            \"mrp\": 150.00,\r\n            \"totalQty\": 10,\r\n            \"grossAmount\": 1500.00,\r\n            \"discountPer\": 3.33,\r\n            \"discountAmount\": 50.00,\r\n            \"taxableAmount\": 1450.00,\r\n            \"gstAmount\": 261.00,\r\n            \"payableAmount\": 1711.00\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/purchases",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 14 Jun 2026 10:31:19 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 201,\n    \"message\": \"Purchase created successfully\",\n    \"data\": {\n        \"pmId\": 1,\n        \"vendorId\": 2,\n        \"vendorName\": \"Vendor 02\",\n        \"companyId\": 3,\n        \"companyName\": \"Company 03\",\n        \"invoiceNo\": \"PUR-2026-0001\",\n        \"invoiceDate\": \"2026-06-14\",\n        \"netItemCount\": 2,\n        \"netGross\": 2500,\n        \"netDiscount\": 100,\n        \"taxableAmount\": 2400,\n        \"netGstAmount\": 432,\n        \"netPayableAmount\": 2832,\n        \"finalAmount\": 2832,\n        \"active\": true,\n        \"items\": [\n            {\n                \"psId\": 1,\n                \"productId\": 1,\n                \"productName\": \"Product 01\",\n                \"mrp\": 100,\n                \"totalQty\": 10,\n                \"grossAmount\": 1000,\n                \"discountPer\": 5,\n                \"discountAmount\": 50,\n                \"taxableAmount\": 950,\n                \"gstAmount\": 171,\n                \"payableAmount\": 1121,\n                \"soldQty\": 0\n            },\n            {\n                \"psId\": 2,\n                \"productId\": 2,\n                \"productName\": \"Product 02\",\n                \"mrp\": 150,\n                \"totalQty\": 10,\n                \"grossAmount\": 1500,\n                \"discountPer\": 3.33,\n                \"discountAmount\": 50,\n                \"taxableAmount\": 1450,\n                \"gstAmount\": 261,\n                \"payableAmount\": 1711,\n                \"soldQty\": 0\n            }\n        ],\n        \"createdAt\": \"2026-06-14T16:01:19.633188\",\n        \"updatedAt\": \"2026-06-14T16:01:19.633188\"\n    },\n    \"timestamp\": \"2026-06-14T16:01:19.7651669\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Purchase by pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/purchases/page?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "purchases",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Purchase by pagination - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/page?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 14 Jun 2026 10:35:01 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Purchases retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"pmId\": 1,\n                \"vendorId\": 2,\n                \"vendorName\": \"Vendor 02\",\n                \"companyId\": 3,\n                \"companyName\": \"Company 03\",\n                \"invoiceNo\": \"PUR-2026-0001\",\n                \"invoiceDate\": \"2026-06-14\",\n                \"netItemCount\": 2,\n                \"netGross\": 2500,\n                \"netDiscount\": 100,\n                \"taxableAmount\": 2400,\n                \"netGstAmount\": 432,\n                \"netPayableAmount\": 2832,\n                \"finalAmount\": 2832,\n                \"active\": true,\n                \"items\": [\n                    {\n                        \"psId\": 1,\n                        \"productId\": 1,\n                        \"productName\": \"Product 01\",\n                        \"mrp\": 100,\n                        \"totalQty\": 10,\n                        \"grossAmount\": 1000,\n                        \"discountPer\": 5,\n                        \"discountAmount\": 50,\n                        \"taxableAmount\": 950,\n                        \"gstAmount\": 171,\n                        \"payableAmount\": 1121,\n                        \"soldQty\": 0\n                    },\n                    {\n                        \"psId\": 2,\n                        \"productId\": 2,\n                        \"productName\": \"Product 02\",\n                        \"mrp\": 150,\n                        \"totalQty\": 10,\n                        \"grossAmount\": 1500,\n                        \"discountPer\": 3.33,\n                        \"discountAmount\": 50,\n                        \"taxableAmount\": 1450,\n                        \"gstAmount\": 261,\n                        \"payableAmount\": 1711,\n                        \"soldQty\": 0\n                    }\n                ],\n                \"createdAt\": \"2026-06-14T16:01:19.633188\",\n                \"updatedAt\": \"2026-06-14T16:01:19.633188\"\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": true,\n                \"sorted\": false,\n                \"unsorted\": true\n            },\n            \"offset\": 0,\n            \"unpaged\": false,\n            \"paged\": true\n        },\n        \"last\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-06-14T16:05:01.7556453\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get purchase by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/purchases/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "purchases",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get purchase by ID - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 14 Jun 2026 10:37:39 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Purchase retrieved successfully\",\n    \"data\": {\n        \"pmId\": 1,\n        \"vendorId\": 2,\n        \"vendorName\": \"Vendor 02\",\n        \"companyId\": 3,\n        \"companyName\": \"Company 03\",\n        \"invoiceNo\": \"PUR-2026-0001\",\n        \"invoiceDate\": \"2026-06-14\",\n        \"netItemCount\": 2,\n        \"netGross\": 2500,\n        \"netDiscount\": 100,\n        \"taxableAmount\": 2400,\n        \"netGstAmount\": 432,\n        \"netPayableAmount\": 2832,\n        \"finalAmount\": 2832,\n        \"active\": true,\n        \"items\": [\n            {\n                \"psId\": 1,\n                \"productId\": 1,\n                \"productName\": \"Product 01\",\n                \"mrp\": 100,\n                \"totalQty\": 10,\n                \"grossAmount\": 1000,\n                \"discountPer\": 5,\n                \"discountAmount\": 50,\n                \"taxableAmount\": 950,\n                \"gstAmount\": 171,\n                \"payableAmount\": 1121,\n                \"soldQty\": 0\n            },\n            {\n                \"psId\": 2,\n                \"productId\": 2,\n                \"productName\": \"Product 02\",\n                \"mrp\": 150,\n                \"totalQty\": 10,\n                \"grossAmount\": 1500,\n                \"discountPer\": 3.33,\n                \"discountAmount\": 50,\n                \"taxableAmount\": 1450,\n                \"gstAmount\": 261,\n                \"payableAmount\": 1711,\n                \"soldQty\": 0\n            }\n        ],\n        \"createdAt\": \"2026-06-14T16:01:19.633188\",\n        \"updatedAt\": \"2026-06-14T16:01:19.633188\"\n    },\n    \"timestamp\": \"2026-06-14T16:07:39.5193061\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get purchases by Vendor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/purchases/vendor/2?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "purchases",
+            "vendor",
+            "2"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get purchases by Vendor - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/vendor/2?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "vendor",
+                "2"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 14 Jun 2026 10:40:10 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Vendor purchases retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"pmId\": 1,\n                \"vendorId\": 2,\n                \"vendorName\": \"Vendor 02\",\n                \"companyId\": 3,\n                \"companyName\": \"Company 03\",\n                \"invoiceNo\": \"PUR-2026-0001\",\n                \"invoiceDate\": \"2026-06-14\",\n                \"netItemCount\": 2,\n                \"netGross\": 2500,\n                \"netDiscount\": 100,\n                \"taxableAmount\": 2400,\n                \"netGstAmount\": 432,\n                \"netPayableAmount\": 2832,\n                \"finalAmount\": 2832,\n                \"active\": true,\n                \"items\": [\n                    {\n                        \"psId\": 1,\n                        \"productId\": 1,\n                        \"productName\": \"Product 01\",\n                        \"mrp\": 100,\n                        \"totalQty\": 10,\n                        \"grossAmount\": 1000,\n                        \"discountPer\": 5,\n                        \"discountAmount\": 50,\n                        \"taxableAmount\": 950,\n                        \"gstAmount\": 171,\n                        \"payableAmount\": 1121,\n                        \"soldQty\": 0\n                    },\n                    {\n                        \"psId\": 2,\n                        \"productId\": 2,\n                        \"productName\": \"Product 02\",\n                        \"mrp\": 150,\n                        \"totalQty\": 10,\n                        \"grossAmount\": 1500,\n                        \"discountPer\": 3.33,\n                        \"discountAmount\": 50,\n                        \"taxableAmount\": 1450,\n                        \"gstAmount\": 261,\n                        \"payableAmount\": 1711,\n                        \"soldQty\": 0\n                    }\n                ],\n                \"createdAt\": \"2026-06-14T16:01:19.633188\",\n                \"updatedAt\": \"2026-06-14T16:01:19.633188\"\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": true,\n                \"sorted\": false,\n                \"unsorted\": true\n            },\n            \"offset\": 0,\n            \"unpaged\": false,\n            \"paged\": true\n        },\n        \"last\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-06-14T16:10:10.1786583\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get purchases by Company",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/purchases/company/3?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "purchases",
+            "company",
+            "3"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get purchases by Company - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/company/3?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "company",
+                "3"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 14 Jun 2026 10:47:09 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Company purchases retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"pmId\": 1,\n                \"vendorId\": 2,\n                \"vendorName\": \"Vendor 02\",\n                \"companyId\": 3,\n                \"companyName\": \"Company 03\",\n                \"invoiceNo\": \"PUR-2026-0001\",\n                \"invoiceDate\": \"2026-06-14\",\n                \"netItemCount\": 2,\n                \"netGross\": 2500,\n                \"netDiscount\": 100,\n                \"taxableAmount\": 2400,\n                \"netGstAmount\": 432,\n                \"netPayableAmount\": 2832,\n                \"finalAmount\": 2832,\n                \"active\": true,\n                \"items\": [\n                    {\n                        \"psId\": 1,\n                        \"productId\": 1,\n                        \"productName\": \"Product 01\",\n                        \"mrp\": 100,\n                        \"totalQty\": 10,\n                        \"grossAmount\": 1000,\n                        \"discountPer\": 5,\n                        \"discountAmount\": 50,\n                        \"taxableAmount\": 950,\n                        \"gstAmount\": 171,\n                        \"payableAmount\": 1121,\n                        \"soldQty\": 0\n                    },\n                    {\n                        \"psId\": 2,\n                        \"productId\": 2,\n                        \"productName\": \"Product 02\",\n                        \"mrp\": 150,\n                        \"totalQty\": 10,\n                        \"grossAmount\": 1500,\n                        \"discountPer\": 3.33,\n                        \"discountAmount\": 50,\n                        \"taxableAmount\": 1450,\n                        \"gstAmount\": 261,\n                        \"payableAmount\": 1711,\n                        \"soldQty\": 0\n                    }\n                ],\n                \"createdAt\": \"2026-06-14T16:01:19.633188\",\n                \"updatedAt\": \"2026-06-14T16:01:19.633188\"\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": true,\n                \"sorted\": false,\n                \"unsorted\": true\n            },\n            \"offset\": 0,\n            \"unpaged\": false,\n            \"paged\": true\n        },\n        \"last\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-06-14T16:17:09.7812651\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Purchase by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/purchases/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "purchases",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Purchase by ID - success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/purchases/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "purchases",
+                "1"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 14 Jun 2026 10:52:17 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
     }
   ]
 }

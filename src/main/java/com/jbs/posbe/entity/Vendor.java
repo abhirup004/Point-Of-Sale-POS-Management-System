@@ -39,6 +39,9 @@ public class Vendor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vendor_id")
     private Long vendorId;
+
+    @Column(nullable = false)
+    private String vname;
     
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -48,10 +51,7 @@ public class Vendor {
     )
     @JsonIgnore
     private List<Company> companies;
-
-    @Column(nullable = false)
-    private String vname;
-
+    
     @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
     private boolean deleted;
 
