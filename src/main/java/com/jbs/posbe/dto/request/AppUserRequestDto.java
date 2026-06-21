@@ -1,0 +1,27 @@
+package com.jbs.posbe.dto.request;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class AppUserRequestDto {
+	
+	@NotBlank(message = "User name is required")
+	private String userName;
+	
+	@NotBlank(message = "Email is required")
+	@Email(message = "Invalid email format")
+	private String userEmail;
+	
+	@NotBlank(message = "Password is required")
+	private String userPassword;
+	
+	@NotBlank(message = "Role is required")
+	private String userRole;
+	
+	private Boolean active = true;
+
+}
