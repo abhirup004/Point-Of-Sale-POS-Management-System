@@ -1,5 +1,7 @@
 package com.jbs.posbe.dto.request;
 
+import com.jbs.posbe.enums.UserRole;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +13,7 @@ public class AppUserPatchDto {
 	
 	private String userPassword;
 	
-	private String userRole;
+	private UserRole userRole;
 	
 	private Boolean active;
 

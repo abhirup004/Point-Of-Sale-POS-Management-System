@@ -6,5 +6,4 @@ import com.jbs.posbe.dto.response.LoginResponseDto;
 public interface AuthService {
 	
 	LoginResponseDto login(LoginRequestDto dto);
-
 }

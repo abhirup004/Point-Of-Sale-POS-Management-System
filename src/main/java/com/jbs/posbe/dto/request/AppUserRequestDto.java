@@ -1,5 +1,7 @@
 package com.jbs.posbe.dto.request;
 
+import com.jbs.posbe.enums.UserRole;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -20,7 +22,7 @@ public class AppUserRequestDto {
 	private String userPassword;
 	
 	@NotBlank(message = "Role is required")
-	private String userRole;
+	private UserRole userRole;
 	
 	private Boolean active = true;
 
