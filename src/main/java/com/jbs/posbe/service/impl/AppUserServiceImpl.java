@@ -106,6 +106,7 @@ public class AppUserServiceImpl implements AppUserService {
 		appUserResponseDto.setUserId(appUser.getUserId());
 		appUserResponseDto.setUserName(appUser.getUserName());
 		appUserResponseDto.setUserEmail(appUser.getUserEmail());
+		appUserResponseDto.setUserRole(appUser.getUserRole().name());
 		appUserResponseDto.setActive(appUser.isActive());
 		/*
 		 * DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

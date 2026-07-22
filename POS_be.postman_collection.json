@@ -4297,6 +4297,677 @@
           "body": null
         }
       ]
+    },
+    {
+      "name": "Login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userEmail\": \"jayanta.b.sen@yopmail.com\",\r\n    \"userPassword\": \"Jayanta@1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add App User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\r\n//     \"userName\": \"Sujoy Sen\",\r\n//     \"userEmail\": \"sujoy.sen@yopmail.com\",\r\n//     \"userPassword\": \"Sujoy@1234\",\r\n//     \"userRole\": \"ROLE_ADMIN\"\r\n// }\r\n// {\r\n//     \"userName\": \"Arun Sen\",\r\n//     \"userEmail\": \"arun.sen@yopmail.com\",\r\n//     \"userPassword\": \"Arun@1234\",\r\n//     \"userRole\": \"ROLE_USER\"\r\n// }\r\n{\r\n    \"userName\": \"Barun Dutta\",\r\n    \"userEmail\": \"barun.dutta@yopmail.com\",\r\n    \"userPassword\": \"Barun@1234\",\r\n    \"userRole\": \"ROLE_USER\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add App User - success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// {\r\n//     \"userName\": \"Sujoy Sen\",\r\n//     \"userEmail\": \"sujoy.sen@yopmail.com\",\r\n//     \"userPassword\": \"Sujoy@1234\",\r\n//     \"userRole\": \"ROLE_ADMIN\"\r\n// }\r\n// {\r\n//     \"userName\": \"Arun Sen\",\r\n//     \"userEmail\": \"arun.sen@yopmail.com\",\r\n//     \"userPassword\": \"Arun@1234\",\r\n//     \"userRole\": \"ROLE_USER\"\r\n// }\r\n// {\r\n//     \"userName\": \"Barun Dutta\",\r\n//     \"userEmail\": \"barun.dutta@yopmail.com\",\r\n//     \"userPassword\": \"Barun@1234\",\r\n//     \"userRole\": \"ROLE_USER\"\r\n// }\r\n{\r\n    \"userName\": \"Kiran Sarkar\",\r\n    \"userEmail\": \"kiran.sarkar@yopmail.com\",\r\n    \"userPassword\": \"Kiran@1234\",\r\n    \"userRole\": \"ROLE_USER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Jul 2026 15:53:44 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 201,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"userId\": 5,\n        \"userName\": \"Kiran Sarkar\",\n        \"userEmail\": \"kiran.sarkar@yopmail.com\",\n        \"userRole\": \"ROLE_USER\",\n        \"active\": true,\n        \"createdAt\": \"2026-07-22T21:23:44.679964\",\n        \"updatedAt\": \"2026-07-22T21:23:44.679964\"\n    },\n    \"timestamp\": \"2026-07-22T21:23:44.7203532\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get all App Users",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userName\": \"Sujoy Sen\",\r\n    \"userEmail\": \"sujoy.sen@yopmail.com\",\r\n    \"userPassword\": \"Sujoy@1234\",\r\n    \"userRole\": \"ROLE_ADMIN\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users/page?page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get all App Users - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"Sujoy Sen\",\r\n    \"userEmail\": \"sujoy.sen@yopmail.com\",\r\n    \"userPassword\": \"Sujoy@1234\",\r\n    \"userRole\": \"ROLE_ADMIN\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/page?page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Jul 2026 15:50:49 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"Users retrieved successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"userId\": 1,\n                \"userName\": \"Jayanta B Sen\",\n                \"userEmail\": \"jayanta.b.sen@yopmail.com\",\n                \"userRole\": \"ROLE_ADMIN\",\n                \"active\": true,\n                \"createdAt\": \"2026-07-22T20:31:44.217549\",\n                \"updatedAt\": \"2026-07-22T20:31:44.217549\"\n            },\n            {\n                \"userId\": 2,\n                \"userName\": \"Sujoy Sen\",\n                \"userEmail\": \"sujoy.sen@yopmail.com\",\n                \"userRole\": \"ROLE_ADMIN\",\n                \"active\": true,\n                \"createdAt\": \"2026-07-22T20:42:20.651327\",\n                \"updatedAt\": \"2026-07-22T20:42:20.651327\"\n            },\n            {\n                \"userId\": 3,\n                \"userName\": \"Arun Sen\",\n                \"userEmail\": \"arun.sen@yopmail.com\",\n                \"userRole\": \"ROLE_USER\",\n                \"active\": true,\n                \"createdAt\": \"2026-07-22T20:50:12.363713\",\n                \"updatedAt\": \"2026-07-22T20:50:12.364365\"\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": true,\n                \"sorted\": false,\n                \"unsorted\": true\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalPages\": 1,\n        \"totalElements\": 3,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"first\": true,\n        \"numberOfElements\": 3,\n        \"empty\": false\n    },\n    \"timestamp\": \"2026-07-22T21:20:49.9128861\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get App User by ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "2"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get App User by ID - success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/users/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Jul 2026 15:51:05 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"userId\": 2,\n        \"userName\": \"Sujoy Sen\",\n        \"userEmail\": \"sujoy.sen@yopmail.com\",\n        \"userRole\": \"ROLE_ADMIN\",\n        \"active\": true,\n        \"createdAt\": \"2026-07-22T20:42:20.651327\",\n        \"updatedAt\": \"2026-07-22T20:42:20.651327\"\n    },\n    \"timestamp\": \"2026-07-22T21:21:05.7268568\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update App User by ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"active\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "4"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update App User by ID - success",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"active\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "4"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Jul 2026 15:51:57 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 200,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"userId\": 4,\n        \"userName\": \"Barun Dutta\",\n        \"userEmail\": \"barun.dutta@yopmail.com\",\n        \"userRole\": \"ROLE_USER\",\n        \"active\": true,\n        \"createdAt\": \"2026-07-22T20:51:00.987957\",\n        \"updatedAt\": \"2026-07-22T21:21:57.442706\"\n    },\n    \"timestamp\": \"2026-07-22T21:21:57.4854123\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete App User by ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users/delete/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "delete",
+            "4"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete App User by ID - success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/users/delete/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "delete",
+                "4"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 22 Jul 2026 15:24:29 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
     }
   ]
 }
