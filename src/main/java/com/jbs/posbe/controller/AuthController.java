@@ -18,8 +18,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-
-
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -27,7 +25,6 @@ public class AuthController {
 	
 	private final AuthService authService;
 	
-	// -------------------------------------------------------------------
 	// ---------------------------------------------------------------------
 	@Operation(
 			tags = "Authentication", 

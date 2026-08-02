@@ -47,3 +47,17 @@ INSERT INTO units(uname,uabbr,`active`,deleted,created_at,updated_at) VALUES('Gr
 UPDATE products SET unit_id = 1;
 
 Bootstrap Problem in authentication systems.
+
+Password Recovery Architecture:
+1. Forgot password
+2. Enter valid email
+3. Verify email exists
+4. Generate 6 digit OTP
+5. Store OTP + expiry time
+6. Send email
+7. User receives the OTP and enters email and OTP on the OTP validation window.
+8. Verify OTP
+9. Verify OTP expiry
+10. New and Confirm Password when submitted then Encrypt password (BCrypt)
+11. Update database
+12. Clean OTP
